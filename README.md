@@ -86,16 +86,6 @@ docker compose up -d --build
 - Frontend: `http://localhost`
 - Backend: `http://localhost:8083`
 
-## Stop the Application
-
-```bash
-docker compose down
-```
-
-## View Logs
-
-```bash
-docker compose logs -f
 ```
 # Automated Testing
 

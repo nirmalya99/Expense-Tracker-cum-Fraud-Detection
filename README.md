@@ -11,12 +11,15 @@ A full-stack expense tracking application with fraud detection features. The pro
 - MySQL database integration
 - Dockerized local development and deployment
 - Nginx-based frontend serving and reverse proxy routing
+- Automated unit testing with JUnit 5 and Mockito
+- Isolated H2 in-memory database testing setup
 
 ## Tech Stack
 
 - **Frontend:** React + Vite
 - **Backend:** Spring Boot 3
 - **Database:** MySQL 8
+- **Testing:** JUnit 5, Mockito, H2 Database
 - **Containerization:** Docker, Docker Compose
 - **Web Server:** Nginx
 - **Language:** Java 17, JavaScript
@@ -29,7 +32,8 @@ A full-stack expense tracking application with fraud detection features. The pro
 ├── frontend
 ├── docker-compose.yml
 ├── .env.example
-└── DEPLOYMENT.md
+├── DEPLOYMENT.md
+└── README.md
 ```
 
 ## Prerequisites
@@ -93,6 +97,73 @@ docker compose down
 ```bash
 docker compose logs -f
 ```
+# Automated Testing
+
+The backend includes a complete unit testing setup using:
+
+- JUnit 5
+- Mockito
+- H2 in-memory database
+
+## Test Coverage
+
+The test suite currently covers:
+
+### Auth Service
+- User registration
+- Duplicate email validation
+- Login authentication
+- JWT token generation
+
+### Transaction Service
+- Transaction creation
+- Transaction filtering
+- User validation
+- Repository interaction
+
+### Fraud Detection Service
+- High-value transaction detection
+- Unusual debit pattern detection
+- Excessive daily transaction checks
+- Repeated round-number transaction checks
+
+### AI Analysis Service
+- Spending vs income analysis
+- Savings insight generation
+- Category-based analysis
+- Unusual spend alerts
+- Empty dataset handling
+
+## Run Tests
+
+```bash
+cd backend
+./mvnw clean test
+```
+
+## Test Database Configuration
+
+Tests use a separate H2 in-memory database configuration located at:
+
+```text
+backend/src/test/resources/application.properties
+```
+
+This allows tests to run independently without requiring the MySQL Docker container.
+
+---
+
+## Stop the Application
+
+```bash
+docker compose down
+```
+
+## View Logs
+
+```bash
+docker compose logs -f
+```
 
 ## Deployment on AWS EC2
 
@@ -118,6 +189,7 @@ Recommended Security Group rules:
 - Nginx proxies API requests to the backend container.
 - MySQL data is stored in a Docker volume.
 - Keep `.env` out of version control.
+
 
 ## License
 

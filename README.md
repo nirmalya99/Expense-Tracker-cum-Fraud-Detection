@@ -86,7 +86,6 @@ docker compose up -d --build
 - Frontend: `http://localhost`
 - Backend: `http://localhost:8083`
 
-```
 # Automated Testing
 
 The backend includes a complete unit testing setup using:

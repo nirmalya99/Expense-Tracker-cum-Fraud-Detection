@@ -179,6 +179,19 @@ Recommended Security Group rules:
 - MySQL data is stored in a Docker volume.
 - Keep `.env` out of version control.
 
+# Screenshots
+
+## Registration Page
+
+![Registration Page](screenshots/Registration.png)
+
+## Login Page
+
+![Login Page](screenshots/Login.png)
+
+## Dashboard
+
+![Dashboard](screenshots/Dashboard.png)
 
 ## License
 

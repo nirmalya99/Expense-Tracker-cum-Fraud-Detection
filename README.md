@@ -1,4 +1,4 @@
-# Expense Tracker cum Fraud Detection
+# Expense Tracker with Fraud Detection
 
 A full-stack expense tracking application with fraud detection features. The project uses a React frontend, a Spring Boot backend, and MySQL for persistence. It is also containerised with Docker and ready for deployment.
 
